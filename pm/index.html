@@ -112,8 +112,10 @@
 	window.onload = function(){
 		
 		$.get('https://opendata.epa.gov.tw/ws/Data/ATM00679/?$format=json',function(data){
+			console.log(data);
 			data.forEach(function(e,i){
 				county[i] = e.County;
+				console.log(county[i]);
 			});
 			result=county.filter(function(element, index, arr){
 				return arr.indexOf(element)=== index;
