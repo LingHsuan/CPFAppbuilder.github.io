@@ -175,6 +175,7 @@
 		if(cpf){ 
 			cpf.request('["grove_setColorRGB", 0, ' + color + ']');
 			cpf.request('["grove_rgblcd_print", 0, 0, ' + color + ']');
+			cpf.request('["tone_play", 6, 261, 300]');
 		}
 	}
 	//cpf設定
