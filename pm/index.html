@@ -111,7 +111,7 @@
 
 	window.onload = function(){
 		
-		$.get('https://opendata.epa.gov.tw/api/v1/ATM00679?%24skip=0&%24top=1000&%24format=json',function(data){
+		$.get('http://opendata2.epa.gov.tw/AQI.json',function(data){
 			console.log(data);
 			data.forEach(function(e,i){
 				county[i] = e.County;
