@@ -99,12 +99,6 @@
 			</table>
 		</div>
 	</div>
-	<div class="row" align="center" id="top">
-		<div class="col-xs-12">
-			<img src="AQI.JPG">
-			<p>《引用行政院環境保護署污染物濃度與污染副指標值對照表》</p>
-		</div>
-	</div>
 </body>
 <script>
 	setup();
@@ -180,12 +174,13 @@
 	function changeColor(color){
 		if(cpf){ 
 			cpf.request('["grove_setColorRGB", 0, ' + color + ']');
+			cpf.request('["grove_rgblcd_print", 0, 0, ' + color + ']');
 		}
 	}
 	//cpf設定
 	function setup(){
 		if(cpf) 
-			cpf.setPinMode('["resetPin"],["grove_newChainableLED", 7, 8, 1]'); 
+			cpf.setPinMode('["resetPin"],["grove_newChainableLED", 7, 8, 1],["grove_rgblcd_begin", 16, 2], 	["setPinMode", "digital", 4, "TONE"]'); 
 	}
 </script>
 </html>
