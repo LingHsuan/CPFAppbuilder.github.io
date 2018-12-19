@@ -173,7 +173,7 @@
 	//LED燈顏色設定
 	function changeColor(color){
 		if(cpf){ 
-			cpf.request('["grove_setColorRGB", 0, ' + color + '], ["grove_rgblcd_print", 0, 0, ' + color + '],["tone_play", 4, 261, 300]');
+			cpf.request('["grove_setColorRGB", 0, ' + color + '], ["grove_rgblcd_print", 0, 0, "a111"],["tone_play", 4, 261, 300]');
 			// cpf.request('["grove_rgblcd_print", 0, 0, ' + color + ']');
 			// cpf.request('["tone_play", 4, 261, 300]');
 		}
@@ -181,7 +181,7 @@
 	//cpf設定
 	function setup(){
 		if(cpf) 
-			cpf.setPinMode('["resetPin"],["grove_newChainableLED", 7, 8, 1],["grove_rgblcd_begin", 16, 2], 	["setPinMode", "digital", 4, "TONE"]'); 
+			cpf.setPinMode('["resetPin"],["grove_newChainableLED", 7, 8, 1],["grove_rgblcd_begin", 16, 2],["setPinMode", "digital", 4, "TONE"]'); 
 	}
 </script>
 </html>
