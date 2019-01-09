@@ -25,6 +25,7 @@
         function loop() {
             if (cpf) {
                 cpf.request('["analogWrite",5,255]');
+                console.log("v1");
                  //cpf.request('["analogWrite",3,100]');              
                 co2 = cpf.get("a0");
                 document.getElementById("co2").innerHTML = co2;  
@@ -34,9 +35,9 @@
                 }else if(co2 >= 200 && co2 <=300){
                     cpf.request('["analogWrite",3,150],["analogWrite",5,150]');
                 }
-                else{
-                    cpf.request('["analogWrite",5,50],["analogWrite",3,50]'); 
-                }                    
+                // else{
+                //     cpf.request('["analogWrite",5,50],["analogWrite",3,50]'); 
+                // }                    
             }
             setTimeout(loop, 1000);
         }
